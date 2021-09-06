@@ -1,12 +1,16 @@
 <template>
-    <div>
-        <ul>
-            <li v-for="movie in movies.data.results" :key="movie.id">
-                <p> {{movie.title}} </p>
-            </li>
-        </ul>
-     <p class="text-success">Current page: <strong>{{ currentPage }}</strong></p>
-    <nav class="mb-4">
+    <div class="container">
+        <div class="row">
+        <div class="card" style="width: 20rem;"  v-for="movie in movies.data.results" :key="movie.id">
+  <img :src="'https://image.tmdb.org/t/p/original'+movie.poster_path" class="card-img-top" alt="..." style="height:477px!important">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}} </h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+    <nav class="Page navigation example">
       <v-pagination v-model="currentPage"
                     :page-count="200"
                     :classes="bootstrapPaginationClasses"
@@ -14,10 +18,11 @@
                     @change="onChange"></v-pagination>
     </nav>
     </div>
+    </div>
 </template>
 
 <script>
-import vPagination from '../components/vue-plain-pagination.vue'
+import vPagination from '../components/Pagination.vue'
 export default {
     
     name : "Movie",
@@ -67,8 +72,13 @@ export default {
 
     },
     created() {
-        this.getData();
+        //this.getData();
         this.tryData();
     }
 }
 </script>
+<style>
+.row {
+    --bs-gutter-x: none!important;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <ul :class="paginationClasses.ul">
+  <ul class="pagination justify-content-center">
     <li
       v-if="paginationLabels.first"
       :class="`${paginationClasses.li} ${hasFirst ? paginationClasses.liDisable : ''}`"
@@ -199,3 +199,12 @@
     }
   }
 </script>
+
+
+<style>
+.pagination{
+    margin-left: auto!important;
+    margin-right: auto!important;
+
+}
+</style>

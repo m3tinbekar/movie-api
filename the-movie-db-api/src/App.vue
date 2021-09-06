@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    
+
     <router-view />
+    
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue"
-import vPagination from './components/vue-plain-pagination.vue'
+
 
 export default {
   components : {
-    Navbar,vPagination
+    Navbar
   },
   data() {
     return{
+      
 
     }
   },
