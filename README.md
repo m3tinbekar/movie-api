@@ -1,2 +1,2 @@
 # movie-api
- themoviedb
+the-movie-db API
