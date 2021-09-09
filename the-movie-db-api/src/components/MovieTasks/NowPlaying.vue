@@ -15,7 +15,7 @@
 
     <nav class="Page navigation example">
       <v-pagination v-model="currentPage"
-                    :page-count="200"
+                    :page-count="500"
                     :classes="bootstrapPaginationClasses"
                     :labels="customLabels"
                     @change="onChange"></v-pagination>
@@ -25,16 +25,13 @@
 </template>
 
 <script>
-import vPagination from '../components/Pagination.vue'
+import vPagination from "../Pagination.vue"
 export default {
-    
-    name : "Movie",
-    components:{
-        vPagination,
-    },
+    name:"now_playing",
+    components:{vPagination},
     data(){
-        return {
-            movies:[],
+        return{
+            movies: [],
             currentPage: 1,
       bootstrapPaginationClasses: { // http://getbootstrap.com/docs/4.1/components/pagination/
         ul: 'pagination',
@@ -51,52 +48,26 @@ export default {
       }
         }
     },
-    methods:{ 
-        // getData() {
-        //     this.$axios.movie("/movie/550?api_key=cd703389e9411def3fc33f6ab53dc8df")
-        //     .then((res) => {
-        //         console.log(res)
-
-
-        //     })
-        // },
-        movieData(){
-            this.$axios.movie("/discover/movie?api_key=cd703389e9411def3fc33f6ab53dc8df&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page="+this.currentPage+"&with_watch_monetization_types=flatrate")
+    methods : {
+        getData(){
+            this.$axios.movieNowPlaying("/movie/now_playing?api_key=cd703389e9411def3fc33f6ab53dc8df&language=en-US&page="+this.currentPage)
             .then((res) =>{
-                console.log(res)
                 this.movies = res
-
+                console.log(res);
             })
         },
         onChange: function () {
             window.scrollTo(0, 0);
-            this.movieData();
+            this.getData();
 
     },
-        onClick(){
+     onClick(){
 
-        }
-
+        },
+    
     },
-    created() {
-        //this.getData();
-        this.movieData();
+    created(){
+        this.getData();
     }
 }
 </script>
-<style>
-.row {
-    --bs-gutter-x: none!important;
-
-}
-.card {
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-}
-.container{
-    
-    margin-top: 50px;
-}
-</style>

@@ -1,8 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
 import Home from "../views/Home.vue";
 import Movie from "../views/Movie.vue";
-
+import SelectedMovie from "../components/MovieTasks/SelectedMovie.vue"
+import Popular from "../components/MovieTasks/Popular.vue"
+import NowPlaying from "../components/MovieTasks/NowPlaying.vue"
+import UpComing from "../components/MovieTasks/UpComing.vue"
+import TopRated from "../components/MovieTasks/TopRated.vue"
 Vue.use(VueRouter);
 
 const routes = [
@@ -26,6 +31,31 @@ const routes = [
     component: Movie,
 
   },
+  {
+    path: "/movie/:id",
+    name: "SelectedMovie",
+    component: SelectedMovie
+  },
+  {
+    path: "/movies/popular",
+    name: "Popular",
+    component: Popular,
+  },
+  {
+    path: "/movies/now_playing",
+    name: "NowPlaying",
+    component: NowPlaying,
+  },
+  {
+    path: "/movies/up_coming",
+    name: "UpComing",
+    component: UpComing,
+  },
+  {
+    path: "/movies/top_rated",
+    name: "TopRated",
+    component: TopRated,
+  }
 ];
 
 const router = new VueRouter({
