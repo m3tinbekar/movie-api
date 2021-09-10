@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
         <div class="card" style="width: 15rem;"  v-for="movie in movies.data.results" :key="movie.id">
-            <a :href="'movie/'+movie.id" @click="onClick">
+            <a :href="'/movie/'+movie.id" @click="onClick">
                  <img :src="'https://image.tmdb.org/t/p/original'+movie.poster_path" class="card-img-top" alt="..."  style="height:357px!important">
             </a>
  

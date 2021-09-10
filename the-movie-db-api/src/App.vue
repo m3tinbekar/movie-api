@@ -26,11 +26,18 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: SourceSansPro-Bold,Avenir, Helvetica, Arial, sans-serif;
+   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+@font-face {
+  font-family: "SourceSansPro-Bold";
+  src: local("SourceSansPro-Bold.ttf"),
+  url(./fonts/SourceSansPro-Bold.ttf) format("truetype");
 }
 
 #nav {
