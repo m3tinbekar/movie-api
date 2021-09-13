@@ -26,7 +26,7 @@ export default {
 
 <style>
 #app {
-  font-family: SourceSansPro-Bold,Avenir, Helvetica, Arial, sans-serif;
+  font-family: SourceSansPro-Bold,SourceSansPro-Light,Avenir, Helvetica, Arial, sans-serif;
    
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,6 +38,9 @@ export default {
   font-family: "SourceSansPro-Bold";
   src: local("SourceSansPro-Bold.ttf"),
   url(./fonts/SourceSansPro-Bold.ttf) format("truetype");
+  /* font-family: "SourceSansPro-Light";
+  src: local("SourceSansPro-Light.ttf"),
+  url(./fonts/SourceSansPro-Light.ttf) format("truetype"); */
 }
 
 #nav {
